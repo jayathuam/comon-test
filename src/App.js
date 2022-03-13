@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./lib/comeon.game-1.0.min";
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+
+import { getData, saveData } from "./utils/localStorage";
+import { AuthContext } from "./contexts/AuthContext";
+import RequireAuth from "./components/RequireAuth";
+import Login from "./components/Login";
+import GamePlay from "./components/GamePlay";
+import Home from "./components/Home";
 
 function App() {
+  const [auth, setAuth] = useState({ ...getData("userInfo") });
+  const setAuthData = (data) => {
+    setAuth(data);
+    saveData("userInfo", data);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthContext.Provider value={{ auth, setAuthData }}>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="/"
+          element={
+            <RequireAuth>
+              <Home />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/game/:code"
+          element={
+            <RequireAuth>
+              <GamePlay />
+            </RequireAuth>
+          }
+        />
+      </Routes>
+    </AuthContext.Provider>
   );
 }
 
