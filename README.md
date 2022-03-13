@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Comon Case Study
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Setup
 
-## Available Scripts
+Using good old `NPM`
 
-In the project directory, you can run:
+Install dependencies
+```sh
+$ npm install
+```
+How to run development server(http://server:3000)
+```sh
+$ npm start
+```
+How to run unit tests
+```sh
+$ npm test
+```
 
-### `npm start`
+Using `Yarn`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Install dependencies
+```sh
+$ yarn
+```
+How to run development server(http://server:3000)
+```sh
+$ yarn start
+```
+How to run unit tests
+```sh
+$ yarn test
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Make sure to add the working api url in the `config.js` file**
+### High Level solution and decisions
+* Built on top of the React js. Used create-react-app as the boiler plate.
+* Use [Emotion](https://emotion.sh/docs/introduction) to create styled components. This library was selected to maintain the simplicity and much easier to change styles based on the props.
+* Use [React query](https://react-query.tanstack.com/overview) for data fetching management. This library is supporting caching, synchronizing and updating server state, support both GraphQL and REST APIs and many more.
+* [Axios](https://www.npmjs.com/package/axios) for access the backend API.
+* [Lodash Debounce](https://www.npmjs.com/package/lodash.debounce) for debounce the search input text. Default value 300ms.
+* [React Router](https://reactrouter.com/docs/en/v6/getting-started/overview) for routing.
+* [React Testing library](https://www.npmjs.com/package/react-input-range) for unit testing.
+* [Eslint](https://eslint.org/) for code linting.
+* `src/config.js` file for global configurations.
+* `Local Storage` for save the user session.
+* Web application is responsive to support mobile and tab devices.
 
-### `npm test`
+### What I can improve further
+*   More unit tests.
+*   Increase the code comments.
+*   Improve Accessability attributes.
+*   Improve UI/UX.
+*   Introduce story book for common component.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Few screenshots for desktop and mobile views
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![comeon-test-mobile-view](https://ibb.co/GFWGv3V)
+![comeon-test-desktop-view-login](https://ibb.co/GnXDdfM)
+![comeon-test-desktop-view](https://ibb.co/ZTRPv6c)
