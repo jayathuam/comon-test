@@ -55,6 +55,6 @@ $ yarn test
 
 ### Few screenshots for desktop and mobile views
 
-![comeon-test-mobile-view](https://ibb.co/GFWGv3V)
-![comeon-test-desktop-view-login](https://ibb.co/GnXDdfM)
-![comeon-test-desktop-view](https://ibb.co/ZTRPv6c)
+![comeon-test-mobile-view](https://i.ibb.co/qxNhMFR/Screenshot-2022-03-13-at-10-19-20-PM.png)
+![comeon-test-desktop-view-login](https://i.ibb.co/fqbWXVN/Screenshot-2022-03-13-at-10-24-08-PM.png)
+![comeon-test-desktop-view](https://i.ibb.co/JkW48Rr/Screenshot-2022-03-13-at-10-19-58-PM.png)
