@@ -67,7 +67,6 @@ const StyledInput = styled(Input)`
 const Header = () => {
   const { auth, setAuthData } = useContext(AuthContext);
   const { filters, setFilters } = useContext(FilterContext);
-  console.log(filters);
   const { player, username } = auth;
   const onError = () => {
     alert("network issue!! try again later");
@@ -76,6 +75,7 @@ const Header = () => {
     setAuthData(null);
   };
   const { isLoading, logoutUser } = useLogout({ onError, onSuccess });
+
   const logout = () => {
     logoutUser({ username: username });
   };
