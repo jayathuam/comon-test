@@ -29,7 +29,7 @@ const GameList = () => {
   return (
     <>
       {error && <div>Error loading with data</div>}
-      {isLoading && <StyledLoader isLoading />}
+      {isLoading && <StyledLoader isLoading data-testid="loader" />}
       {!isLoading && filteredData?.length === 0 && <div>No result found</div>}
       {!isLoading &&
         filteredData?.length > 0 &&

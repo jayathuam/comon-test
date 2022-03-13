@@ -25,7 +25,7 @@ const Categories = () => {
   return (
     <>
       {error && <div>loading error</div>}
-      {isLoading && <StyledLoader isLoading />}
+      {isLoading && <StyledLoader isLoading data-testid="loader" />}
       {!isLoading &&
         data?.length > 0 &&
         data.map(({ id, name }) => (

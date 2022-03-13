@@ -68,9 +68,12 @@ const Header = () => {
   const { auth, setAuthData } = useContext(AuthContext);
   const { filters, setFilters } = useContext(FilterContext);
   const { player, username } = auth;
+
+  // display error alert for network problems when doing the log out
   const onError = () => {
     alert("network issue!! try again later");
   };
+  // for successfully log out clear the user session
   const onSuccess = () => {
     setAuthData(null);
   };

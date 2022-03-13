@@ -11,12 +11,13 @@ import axios from "../utils/axios";
  * {
  *  isLoading: false,
  *  authenticate: () => {...},
+ *  isError: false,
  * }
  * when running the authentication function username and password need to be pass as params
  * EX: authenticate({ username: "xxx", password: "xxxx"})
  */
 const useLogin = ({ onError, onSuccess }) => {
-  const { isLoading, mutate } = useMutation(
+  const { isLoading, mutate, isError } = useMutation(
     async (userData) => {
       return await axios.post("login", userData);
     },
@@ -26,6 +27,7 @@ const useLogin = ({ onError, onSuccess }) => {
   return {
     isLoading,
     authenticate: mutate,
+    isError,
   };
 };
 

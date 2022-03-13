@@ -85,15 +85,13 @@ const Login = () => {
     }
   }, [auth]);
 
-  const onError = () =>
-    setErrors({ network: "Incorrect Username, Email or Password" });
-
+  // redirect to home page for success login
   const onSuccess = ({ data }) => {
     const from = location.state?.from?.pathname || "/";
     setAuthData({ ...data, username: loginDetails.username });
     navigate(from, { replace: true });
   };
-  const { isLoading, authenticate } = useLogin({ onError, onSuccess });
+  const { isLoading, authenticate, isError } = useLogin({ onSuccess });
 
   const onValueChange = (e) => {
     const { name, value } = e.target;
@@ -124,7 +122,9 @@ const Login = () => {
         <Form noValidate onSubmit={submit}>
           <StyledH1>Welcome</StyledH1>
 
-          {errors?.network && <ErrorText>{errors?.network}</ErrorText>}
+          {isError && (
+            <ErrorText>Incorrect Username, Email or Password</ErrorText>
+          )}
 
           <FormContent>
             <Label>username *</Label>
@@ -157,7 +157,6 @@ const Login = () => {
             color={colors.secondaryText}
             handleOnClick={submit}
             loading={isLoading}
-            // disabled={loading}
           />
         </Form>
       </Content>
